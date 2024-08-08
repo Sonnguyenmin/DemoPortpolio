@@ -3897,7 +3897,7 @@ body::-webkit-scrollbar-thumb {
 }
 @media (min-width: 768px) {
   .sign__form {
-    padding: 40px 60px;
+    padding: 40px 30px;
   }
   .sign__form--full {
     padding: 30px;
@@ -4468,4 +4468,21 @@ body::-webkit-scrollbar-thumb {
   height: 4px !important;
   border-radius: 4px !important;
   cursor: pointer;
+}
+
+.small_alert{
+  width: 100%;
+  display: block;
+  margin-top: -20px;
+  animation: sizeFaceIn 0.4s ease-in;
+}
+
+
+@keyframes sizeFaceIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

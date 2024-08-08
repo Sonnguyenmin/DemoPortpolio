@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping(value = {"/", "/home"})
 public class HomeController {
 
     @GetMapping("/")
@@ -28,4 +28,5 @@ public class HomeController {
     public String Forbidden(Model model) {
         return "page/403";
     }
+
 }
