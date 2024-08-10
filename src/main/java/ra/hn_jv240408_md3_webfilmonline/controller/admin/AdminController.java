@@ -1,4 +1,4 @@
-package ra.hn_jv240408_md3_webfilmonline.controller;
+package ra.hn_jv240408_md3_webfilmonline.controller.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

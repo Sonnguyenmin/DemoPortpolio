@@ -1,4 +1,4 @@
-package ra.hn_jv240408_md3_webfilmonline.controller;
+package ra.hn_jv240408_md3_webfilmonline.controller.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,17 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = {"/", "/home"})
+@RequestMapping ("/user")
 public class HomeController {
-
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home(Model model) {
-        return "main/home";
-    }
-
-    @GetMapping("/register")
-    public String register(Model model) {
-        return "page/register";
+        return "user/home";
     }
 
     @GetMapping("/404")
@@ -27,6 +21,11 @@ public class HomeController {
     @GetMapping("/403")
     public String Forbidden(Model model) {
         return "page/403";
+    }
+
+    @GetMapping("/detail")
+    public String detail(Model model) {
+        return "user/detail";
     }
 
 }

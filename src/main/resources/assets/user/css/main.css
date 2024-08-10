@@ -4486,3 +4486,29 @@ body::-webkit-scrollbar-thumb {
     opacity: 1;
   }
 }
+
+
+.img_bg_home {
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: scale(1.25) translateY(-10%);
+  -moz-transform: scale(1.25) translateY(-10%);
+  -ms-transform: scale(1.25) translateY(-10%);
+  transform: scale(1.25) translateY(-10%);
+  object-fit: contain;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.z_index-1 {
+  background-color: rgba(26, 25, 32, 0.9);
+}
+
+
+.z_index {
+  background-color: rgba(0, 0, 0, 0.65);
+}

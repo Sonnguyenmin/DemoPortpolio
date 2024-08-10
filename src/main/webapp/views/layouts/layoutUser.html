@@ -59,7 +59,7 @@
             <div class="col-12">
                 <div class="header__content">
                     <!-- header logo -->
-                    <a href="index.html" class="header__logo">
+                    <a th:href="@{/}" class="header__logo">
                         <img th:src="@{/assets/user/img/logo.svg}" alt="">
                     </a>
                     <!-- end header logo -->
@@ -68,9 +68,8 @@
                     <ul class="header__nav">
                         <!-- dropdown -->
                         <li class="header__nav-item">
-                            <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="header__nav-link" th:href="@{/}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Trang chủ
-                                <i class="ti ti-chevron-down"></i>
                             </a>
                         </li>
                         <!-- end dropdown -->
@@ -80,10 +79,7 @@
                             <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catalog <i class="ti ti-chevron-down"></i></a>
 
                             <ul class="dropdown-menu header__dropdown-menu">
-                                <li><a href="catalog.html">Catalog style 1</a></li>
-                                <li><a href="catalog2.html">Catalog style 2</a></li>
-                                <li><a href="details.html">Details Movie</a></li>
-                                <li><a href="details2.html">Details TV Series</a></li>
+<!--                                <li><a href="catalog.html"></a></li>-->
                             </ul>
                         </li>
                         <!-- end dropdown -->
@@ -114,7 +110,7 @@
 
                             <ul class="dropdown-menu header__dropdown-menu">
                                 <li><a href="signin.html">Sign in</a></li>
-                                <li><a th:href="@{/register}">Sign up</a></li>
+                                <li><a th:href="@{/auth/register}">Đăng ký</a></li>
                                 <li><a href="forgot.html">Forgot password</a></li>
                                 <li><a th:href="@{/403}">403 Page</a></li>
                             </ul>
