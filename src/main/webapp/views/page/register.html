@@ -11,43 +11,34 @@
             <div class="col-12">
                 <div class="sign__content">
                     <!-- registration form -->
-                    <form  class="sign__form" method="post">
-                        <a th:href="@{/home}" class="sign__logo">
+                    <form class="sign__form" action="/register" th:object="${formRegister}" method="post">
+                        <div class="sign__logo">
                             <img th:src="@{/assets/user/img/logo.svg}">
-                        </a>
+                        </div>
 
                         <div class="sign__group">
-                            <input type="text"  class="sign__input" placeholder="Họ và tên">
+                            <input type="text" class="sign__input" placeholder="Họ và tên" th:field="*{fullName}">
                         </div>
-                        <small class="text-danger small_alert"> kdscksdjbcnksj</small>
-                        <div class="sign__group">
-                            <input type="text" class="sign__input" placeholder="Email">
-                        </div>
-                        <small class="text-danger small_alert"> kdscksdjbcnksj</small>
+                        <small class="text-danger small_alert" th:if="${#fields.hasErrors('fullName')}"  th:errors="*{fullName}" ></small>
 
                         <div class="sign__group">
-                            <input type="text" class="sign__input" placeholder="Số điện thoại">
+                            <input type="text" class="sign__input" placeholder="Tên tài khoản" th:field="*{userName}">
                         </div>
-                        <small class="text-danger small_alert"> kdscksdjbcnksj</small>
+                        <small class="text-danger small_alert" th:if="${#fields.hasErrors('userName')}"  th:errors="*{userName}"> </small>
 
                         <div class="sign__group">
-                            <input type="text" class="sign__input" placeholder="Tên tài khoản">
+                            <input type="text" class="sign__input" placeholder="Email" th:field="*{email}">
                         </div>
-                        <small class="text-danger small_alert"> kdscksdjbcnksj</small>
+                        <small class="text-danger small_alert" th:if="${#fields.hasErrors('email')}"  th:errors="*{email}"> </small>
 
                         <div class="sign__group">
-                            <input type="password" class="sign__input" placeholder="Mật khẩu">
+                            <input type="password" id="password" class="sign__input" placeholder="Mật khẩu" th:field="*{password}">
                         </div>
-                        <small class="text-danger small_alert"> kdscksdjbcnksj</small>
-
-                        <div class="sign__group">
-                            <input type="password" class="sign__input" placeholder="Nhập lại mật khẩu">
-                        </div>
-                        <small class="text-danger small_alert"> kdscksdjbcnksj</small>
+                        <small class="text-danger small_alert" th:if="${#fields.hasErrors('password')}"  th:errors="*{password}"> </small>
 
                         <button class="sign__btn" type="submit">Đăng ký</button>
 
-                        <span class="sign__text">Bạn đã có tài khoản? <a href="signin.html">Đăng nhập!</a></span>
+                        <span class="sign__text">Bạn đã có tài khoản? <a th:href="@{/login}">Đăng nhập!</a></span>
                     </form>
                     <!-- registration form -->
                 </div>
@@ -58,6 +49,7 @@
 
 <!-- JS -->
 <th:block th:replace="/layouts/layoutUser::javascript"></th:block>
+
 </body>
 
 <!-- Mirrored from hotflix.volkovdesign.com/main/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 09:42:49 GMT -->

@@ -11,29 +11,34 @@
             <div class="col-12">
                 <div class="sign__content">
                     <!-- authorization form -->
-                    <form action="#" class="sign__form">
-                        <a th:href="@{/}" class="sign__logo">
+                    <form class="sign__form" action="/login" th:object="${formLogin}" method="post">
+                        <div class="sign__logo">
                             <img th:src="@{/assets/user/img/logo.svg}" alt="">
-                        </a>
-
-                        <div class="sign__group">
-                            <input type="text" class="sign__input" placeholder="Tên tài khoản">
                         </div>
 
+<!--                        <small class="text-danger small_alert" th:if="${#fields.hasErrors('error')}" ></small>-->
+
                         <div class="sign__group">
-                            <input type="password" class="sign__input" placeholder="Mật khẩu">
+                            <input type="text" class="sign__input" placeholder="Email" th:field="*{email}">
                         </div>
+                        <small class="text-danger small_alert" th:if="${#fields.hasErrors('email')}"  th:errors="*{email}"></small>
+
+                        <div class="sign__group">
+                            <input type="password" class="sign__input" placeholder="Mật khẩu" th:field="*{password}">
+                        </div>
+                        <small class="text-danger small_alert" th:if="${#fields.hasErrors('password')}"  th:errors="*{password}" ></small>
+
 
                         <div class="sign__group sign__group--checkbox">
                             <input id="remember" name="remember" type="checkbox" checked="checked">
                             <label for="remember">Lưu tài khoản</label>
                         </div>
 
-                        <button class="sign__btn" type="button">Đăng nhập</button>
+                        <button class="sign__btn" type="submit">Đăng nhập</button>
 
-                        <span class="sign__text">Bạn chưa có tài khoản? <a href="signup.html">Đăng ký!</a></span>
+                        <span class="sign__text">Bạn chưa có tài khoản? <a th:href="@{/register}">Đăng ký!</a></span>
 
-                        <span class="sign__text"><a href="forgotPassword.html">Quên mật khẩu?</a></span>
+                        <span class="sign__text"><a href="">Quên mật khẩu?</a></span>
                     </form>
                     <!-- end authorization form -->
                 </div>

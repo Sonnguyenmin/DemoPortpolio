@@ -31,32 +31,54 @@
                     <table class="catalog__table">
                         <thead>
                         <tr>
-                            <th >ID</th>
-                            <th >TÊN DANH MỤC</th>
-                            <th >TRẠNG THÁI</th>
-                            <th >HÀNH ĐỘNG</th>
+                            <th>ID</th>
+                            <th>TITLE</th>
+                            <th>RATING</th>
+                            <th>CATEGORY</th>
+                            <th>VIEWS</th>
+                            <th>STATUS</th>
+                            <th>CRAETED DATE</th>
+                            <th>ACTIONS</th>
                         </tr>
                         </thead>
 
                         <tbody>
-                        <tr th:if="${category != null}">
+                        <tr>
                             <td>
-                                <div class="catalog__text" th:text="${category.id}"></div>
+                                <div class="catalog__text">11</div>
                             </td>
                             <td>
-                                <div class="catalog__text" th:text="${category.categoryName}"></div>
+                                <div class="catalog__text"><a href="#">I Dream in Another Language</a></div>
                             </td>
-                            <td><!--' + (${category.status} ? 'catalog__text&#45;&#45;green' : 'catalog__text&#45;&#45;red')-->
-                                <div class="catalog__text "
-                                     th:text="${category.status} ? 'hoạt động' : 'không hoạt động'">
-                                </div>
+                            <td>
+                                <div class="catalog__text catalog__text--rate">7.9</div>
+                            </td>
+                            <td>
+                                <div class="catalog__text">Movie</div>
+                            </td>
+                            <td>
+                                <div class="catalog__text">1392</div>
+                            </td>
+                            <td>
+                                <div class="catalog__text catalog__text--green">Visible</div>
+                            </td>
+                            <td>
+                                <div class="catalog__text">05.02.2023</div>
                             </td>
                             <td>
                                 <div class="catalog__btns">
-                                    <a th:href="@{/admin/category}" class="catalog__btn catalog__btn--view">
-                                        <i class="ti ti-backspace"></i>
+                                    <button type="button" data-bs-toggle="modal" class="catalog__btn catalog__btn--banned" data-bs-target="#modal-status">
+                                        <i class="ti ti-lock"></i>
+                                    </button>
+                                    <a href="#" class="catalog__btn catalog__btn--view">
+                                        <i class="ti ti-eye"></i>
                                     </a>
-
+                                    <a href="add-item.html" class="catalog__btn catalog__btn--edit">
+                                        <i class="ti ti-edit"></i>
+                                    </a>
+                                    <button type="button" data-bs-toggle="modal" class="catalog__btn catalog__btn--delete" data-bs-target="#modal-delete">
+                                        <i class="ti ti-trash"></i>
+                                    </button>
                                 </div>
                             </td>
                         </tr>

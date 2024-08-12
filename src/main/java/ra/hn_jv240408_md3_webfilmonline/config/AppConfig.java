@@ -74,6 +74,18 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         return resolver;
     }
 
+    //Setup kho chứa trên firebase
+//    @Bean
+//    public Storage storage() throws IOException
+//    {
+//        InputStream inputStream = new ClassPathResource("firebase-config.json").getInputStream();
+//        return StorageOptions.newBuilder()
+//                .setCredentials(GoogleCredentials.fromStream(inputStream))
+//                .build()
+//                .getService();
+//    }
+
+
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
@@ -89,17 +101,6 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         dataSource.setPassword("123456");
         return dataSource;
     }
-
-    //Setup kho chứa trên firebase
-//    @Bean
-//    public Storage storage() throws IOException
-//    {
-//        InputStream inputStream = new ClassPathResource("firebase-config.json").getInputStream();
-//        return StorageOptions.newBuilder()
-//                .setCredentials(GoogleCredentials.fromStream(inputStream))
-//                .build()
-//                .getService();
-//    }
 
     @Bean
     public LocalSessionFactoryBean sessionFactoryBean()
@@ -126,7 +127,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     public void addCorsMappings(CorsRegistry registry)
     {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:8080/HotFlix")
+                .allowedOrigins("http://localhost:8080/HotFlix.vn.com")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true)

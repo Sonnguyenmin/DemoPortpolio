@@ -9,28 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class AdminController {
 
-    @GetMapping("/index")
-    public String index(Model model) {
-        return "admin/index";
-    }
-
-    @GetMapping("/category")
-    public String category(Model model) {
-        return "admin/category/listCategory";
-    }
-
-    @GetMapping("/add_category")
-    public String addCategory(Model model) {
-        return "admin/category/addCategory";
-    }
-
-    @GetMapping("/edit_category")
-    public String editCategory(Model model) {
-        return "admin/category/editCategory";
-    }
-
-    @GetMapping("/detail_category")
-    public String detailCategory(Model model) {
-        return "admin/category/detailCategory";
+    @GetMapping({"/dashboard", "dashboard.html"})
+    public String dashboard() {
+        return "admin/dashboard";
     }
 }
